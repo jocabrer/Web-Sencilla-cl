@@ -9,7 +9,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule  } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ComponenteNoEncontradoComponent } from './componente-no-encontrado/componente-no-encontrado.component';
-
+import { MatToolbarModule} from '@angular/material/toolbar';
+import { MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,10 @@ import { ComponenteNoEncontradoComponent } from './componente-no-encontrado/comp
     MatSlideToggleModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatDividerModule,
     RouterModule.forRoot([
         {path: 'creatuweb', component: ArmaWebComponent},
         {path: 'contacto', component: ContactoSolicitudComponent},

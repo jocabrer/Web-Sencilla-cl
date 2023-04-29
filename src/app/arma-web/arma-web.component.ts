@@ -6,7 +6,7 @@ import { Product } from '../models/products';
 @Component({
     selector: 'app-arma-web',
     templateUrl: './arma-web.component.html',
-    styleUrls: ['./arma-web.component.css'],
+    styleUrls: ['./arma-web.component.scss'],
 })
 export class ArmaWebComponent  implements OnInit{
     
