@@ -1,0 +1,9 @@
+.armaweb-form mat-slide-toggle {
+    margin: 8px 0;
+    display: block;
+}
+
+
+:host ::ng-deep .mat-mdc-slide-toggle .mdc-form-field {
+    color: var(--mdc-theme-text-primary-on-background, rgb(27, 11, 11));
+}

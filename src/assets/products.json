@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Página web simple",
+        "description": "Description of product 1",
+        "price": 25000
+    },
+    {
+        "id": 2,
+        "name": "Almacenamiento en la nube",
+        "description": "Description of product 2",
+        "price": 19.99
+    },
+    {
+        "id": 3,
+        "name": "Dominio .cl",
+        "description": "Description of product 3",
+        "price": 7.99
+    }
+]

@@ -1,0 +1,18 @@
+<h3>Arma tu web</h3>
+<p>Obten tu paquete personalizado para tu web acá !</p>
+
+
+<p>Slide Toggle inside of a Reactive form</p>
+
+<form class="armawebform" [formGroup]="armawebform" (ngSubmit)="alertFormValues(armawebform)"  ngNativeValidate>
+
+    <ul>
+        <li *ngFor="let product of products">
+          <mat-slide-toggle [formControlName]="product.id">{{ product.name }}</mat-slide-toggle>
+        </li>
+      </ul>
+
+
+  
+      <button mat-raised-button type="submit">Save Settings</button>
+</form>
