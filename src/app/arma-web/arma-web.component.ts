@@ -10,6 +10,7 @@ import { Product } from '../models/products';
 })
 export class ArmaWebComponent  implements OnInit{
     
+    total: number = 0 ;
     products!: Product[];
     armawebform: UntypedFormGroup;
 
@@ -29,7 +30,8 @@ export class ArmaWebComponent  implements OnInit{
                 controls[product.id] = [false];
                 return controls;
             }, {});
-            console.log(productControls);
+
+
             this.armawebform = this.fb.group(productControls);
         });
 
@@ -38,6 +40,16 @@ export class ArmaWebComponent  implements OnInit{
     }
     alertFormValues(formGroup: FormGroup) {
         alert(JSON.stringify(formGroup.value, null, 2));
-      }
+    }
+
+    sumatotal(event: any)
+    { 
+        if (event.checked)
+        {
+
+        }
+        this.total = 1;
+        console.log( this.armawebform.controls );
+    }
    
 }
