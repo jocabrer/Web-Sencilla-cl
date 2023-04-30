@@ -9,12 +9,24 @@
         "id": 2,
         "name": "Almacenamiento en la nube",
         "description": "Description of product 2",
-        "price": 19.99
+        "price": 9000
     },
     {
         "id": 3,
         "name": "Dominio .cl",
         "description": "Description of product 3",
-        "price": 7.99
+        "price": 11000
+    },
+    {
+        "id": 4,
+        "name": "Seo",
+        "description": "Optimización para buscadores",
+        "price": 25000
+    },
+    {
+        "id": 5,
+        "name": "Carro de compras",
+        "description": "catalogo de productos y carrito de compras",
+        "price": 60000
     }
 ]

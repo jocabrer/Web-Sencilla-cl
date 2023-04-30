@@ -1,18 +1,90 @@
-<h3>Arma tu web</h3>
-<p>Obten tu paquete personalizado para tu web acá !</p>
+<form
+    class="armawebform"
+    [formGroup]="armawebform"
+    (ngSubmit)="alertFormValues(armawebform)"
+    ngNativeValidate
+>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl lg:mx-0">
+            <h2
+                class="text-10xl font-bold tracking-tight text-white sm:text-8xl"
+            >
+                Seleccione las características para incluir en su plan
+            </h2>
+            <p class="mt-6 text-lg leading-8 text-gray-300">
+                Generamos soluciones a medida de nuestro cliente
+            </p>
+        </div>
+        <div class="mx-auto mt-12 max-w-2xl lg:mx-0 lg:max-w-none">
+            <div
+                class="grid grid-rows-3 grid-flow-col gap-4 text-base font-semibold text-white"
+            >
+                <div class="row-span-3 ...">
+                    <ul>
+                        <li *ngFor="let product of products">
+                            <mat-slide-toggle
+                                [formControlName]="product.id"
+                                (change)="sumatotal($event)"
+                                >{{ product.name }} -
+                                {{ product.price }}</mat-slide-toggle
+                            >
+                            <mat-divider
+                                style="background-color: bisque"
+                            ></mat-divider>
+                            <br />
+                        </li>
+                    </ul>
+                    <br />
+                    Total ${{ this.total }}
+                </div>
+                <div class="col-span-2 ...">Este es un pna fijo</div>
+                <div class="row-span-2 col-span-2 ..."></div>
+            </div>
 
-
-<p>Slide Toggle inside of a Reactive form</p>
-
-<form class="armawebform" [formGroup]="armawebform" (ngSubmit)="alertFormValues(armawebform)"  ngNativeValidate>
-
-    <ul>
-        <li *ngFor="let product of products">
-          <mat-slide-toggle [formControlName]="product.id">{{ product.name }}</mat-slide-toggle>
-        </li>
-      </ul>
-
-
-  
-      <button mat-raised-button type="submit">Save Settings</button>
+            <dl
+                class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4"
+            >
+                <div class="flex flex-col-reverse">
+                    <dt class="text-base leading-7 text-gray-300">
+                        Offices worldwide
+                    </dt>
+                    <dd
+                        class="text-2xl font-bold leading-9 tracking-tight text-white"
+                    >
+                        12
+                    </dd>
+                </div>
+                <div class="flex flex-col-reverse">
+                    <dt class="text-base leading-7 text-gray-300">
+                        Full-time colleagues
+                    </dt>
+                    <dd
+                        class="text-2xl font-bold leading-9 tracking-tight text-white"
+                    >
+                        300+
+                    </dd>
+                </div>
+                <div class="flex flex-col-reverse">
+                    <dt class="text-base leading-7 text-gray-300">
+                        Hours per week
+                    </dt>
+                    <dd
+                        class="text-2xl font-bold leading-9 tracking-tight text-white"
+                    >
+                        40
+                    </dd>
+                </div>
+                <div class="flex flex-col-reverse">
+                    <dt class="text-base leading-7 text-gray-300">
+                        Paid time off
+                    </dt>
+                    <dd
+                        class="text-2xl font-bold leading-9 tracking-tight text-white"
+                    >
+                        Unlimited
+                    </dd>
+                </div>
+            </dl>
+        </div>
+    </div>
 </form>
