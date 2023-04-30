@@ -14,22 +14,22 @@ import {
 })
 export class AppComponent implements AfterViewInit {
     @ViewChild('menubutton') menubutton!: ElementRef;
-    @ViewChild('mobileMenu') mobileMenu!: ElementRef; 
+    @ViewChild('mobileMenu') mobileMenu!: ElementRef;
 
     constructor() {}
 
     ngAfterViewInit() {
-        console.log(this.mobileMenu.nativeElement);   
-    } 
+        console.log(this.mobileMenu.nativeElement);
+    }
 
-    /**  
+    /**
      *yy
      */
-    mostrarMenuMobile() {   
+    mostrarMenuMobile() {
         if (this.mobileMenu.nativeElement.style.display === 'block') {
-            this.mobileMenu.nativeElement.style.display = 'none'; 
-        } else {   
-            this.mobileMenu.nativeElement.style.display = 'block' 
+            this.mobileMenu.nativeElement.style.display = 'none';
+        } else {
+            this.mobileMenu.nativeElement.style.display = 'block';
         }
     }
 
