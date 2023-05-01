@@ -14,6 +14,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card';
+
 
 @NgModule({
     declarations: [AppComponent, ArmaWebComponent, ContactoSolicitudComponent],
@@ -29,6 +31,7 @@ import { MatMenuModule } from '@angular/material/menu';
         MatButtonModule,
         MatMenuModule,
         MatDividerModule,
+        MatCardModule,
         RouterModule.forRoot([
             { path: 'creatuweb', component: ArmaWebComponent },
             { path: 'contacto', component: ContactoSolicitudComponent },

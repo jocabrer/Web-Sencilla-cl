@@ -44,3 +44,7 @@ Thumbs.db
 
 
 package-lock.json
+.eslintignore
+.prettierignore
+.eslintignore
+.eslintrc.js

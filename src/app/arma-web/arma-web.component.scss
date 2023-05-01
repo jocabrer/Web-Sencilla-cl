@@ -3,6 +3,8 @@
     display: block;
 }
 
-:host ::ng-deep .mat-mdc-slide-toggle .mdc-form-field {
-    color: var(--mdc-theme-text-primary-on-background, rgb(241, 241, 241));
+:host ::ng-deep mat-card{
+    color: var(--mdc-theme-text-primary-on-background, rgb(3, 0, 0));
+    background-color: #7183a5;
+    padding: 2em;
 }
