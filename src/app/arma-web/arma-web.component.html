@@ -4,35 +4,42 @@
 
         <div class="mx-auto mt-12 max-w-2xl lg:mx-0 lg:max-w-none">
             
-            <div class="grid grid-rows-3 grid-flow-col gap-4 text-base font-semibold text-white">
-                <div class="row-span-3 ...">
+            <div class="grid grid-rows-1 grid-flow-col gap-4 text-base font-semibold">
+                <div>
                     <mat-card>
                         <mat-card-header>
-                            <mat-card-title> Seleccione las características para incluir en su plan</mat-card-title>
-                            <mat-card-subtitle>Generamos soluciones a medida de nuestro cliente</mat-card-subtitle>
+                            <mat-card-title> Selecciones los componentes</mat-card-title>
+                            <mat-card-subtitle>Para su cotización incluya todos los servicios y funciones que necesita para su web</mat-card-subtitle>
                         </mat-card-header>
                     
-                        <br />
-                            <ul>
-                                <li *ngFor="let product of products">
-                                    <mat-slide-toggle [formControlName]="product.id" (change)="sumatotal($event)">{{
-                                        product.name }} -
-                                        {{ product.price }}</mat-slide-toggle>
-                                    <mat-divider style="background-color: bisque"></mat-divider>
-                                    <br />
-                                </li>
-                            </ul>
-                            <br />
+                        <table class="table-auto">
+                            <thead>
+                              <tr>
+                                <th>Funcionalidad</th>
+                                <th>Costo</th>
+                                <th>Seleccionar</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let product of products">
+                                <td>{{  product.name }}
+                                    <mat-icon aria-hidden="false" fontIcon="help" matTooltip="{{ product.descriptionLarga }}" matTooltipPosition = "right" class="icon-display"></mat-icon>
+                                </td>
+                                <td class="text-right">{{ product.price  | formatoNumeros : 'formatoMoneda'}}</td>
+                                <td class="text-center"> 
+                                    <mat-slide-toggle [formControlName]="product.id" (change)="sumatotal($event)"></mat-slide-toggle></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                       
                             <mat-card-actions align="end">
-                                Total ${{ this.total }}
+                                Total {{ this.total  | formatoNumeros : 'formatoMoneda' }}
                             </mat-card-actions>
                     
                     
                     
                     </mat-card>
                 </div>
-                <div class="col-span-2 ...">Este es un pna fijo</div>
-                <div class="row-span-2 col-span-2 ...">aaaa</div>
             </div>
 
             <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">

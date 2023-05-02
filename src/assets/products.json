@@ -3,30 +3,35 @@
         "id": 1,
         "name": "Página web simple",
         "description": "Description of product 1",
+        "descriptionLarga": "Optimización para buscadores",
         "price": 25000
     },
     {
         "id": 2,
         "name": "Almacenamiento en la nube",
         "description": "Description of product 2",
+        "descriptionLarga": "Optimización para buscadores",
         "price": 9000
     },
     {
         "id": 3,
         "name": "Dominio .cl",
         "description": "Description of product 3",
+        "descriptionLarga": "Optimización para buscadores",
         "price": 11000
     },
     {
         "id": 4,
         "name": "Seo",
         "description": "Optimización para buscadores",
+        "descriptionLarga": "Optimización para buscadores",
         "price": 25000
     },
     {
         "id": 5,
         "name": "Carro de compras",
         "description": "catalogo de productos y carrito de compras",
+        "descriptionLarga": "Optimización para buscadores",
         "price": 60000
     }
 ]

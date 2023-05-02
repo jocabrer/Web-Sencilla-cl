@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, UntypedFormGroup } from '@angular/forms';
 import { ProductService } from '../services/product.service';
 import { Product } from '../models/products';
+import { Console } from 'console';
 
 @Component({
     selector: 'app-arma-web',
@@ -25,18 +26,21 @@ export class ArmaWebComponent implements OnInit {
     }
 
     inicializarFormulario() {
-        this.prodServ.getProducts().subscribe((products) => {
+        
+        this.prodServ.getProducts().subscribe(products => {
             this.products = products;
-            const productControls = this.products.reduce(
-                (controls: any, product) => {
-                    controls[product.id] = [false];
-                    controls[product.id].precio = product.price;
-                    return controls;
-                },
-                {}
-            );
-
-            this.armawebform = this.fb.group(productControls);
+            
+            const productControls = this.products.map(product => ({
+                id: product.id,
+                control: this.fb.control(false)
+            }));
+          
+            const controlGroup = productControls.reduce((controls: any, { id, control }) => {
+                controls[id] = control;
+                return controls;
+            }, {});
+          
+            this.armawebform = this.fb.group(controlGroup);
         });
     }
     alertFormValues(formGroup: FormGroup) {
@@ -45,6 +49,25 @@ export class ArmaWebComponent implements OnInit {
 
     sumatotal(event: unknown) {
         // const isChecked=event.checked
-        console.log(event);
+        const controles = this.armawebform.getRawValue();
+
+        this.total = 0 ; 
+        // Iterar sobre las claves del objeto
+        Object.keys(controles).forEach(key => {
+            const control = this.armawebform.get(key); // obtener control individual
+            if (control?.getRawValue())
+            {
+                this.products.find(prod => {
+                    if (prod.id === +key)
+                    {
+                        this.total += prod.price;
+                    }
+                }) ;  
+            }
+            
+            // hacer algo con el control, por ejemplo, validar o actualizar su valor
+        });
+
+        
     }
 }
