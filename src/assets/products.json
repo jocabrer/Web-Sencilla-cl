@@ -31,7 +31,7 @@
         "id": 5,
         "name": "Carro de compras",
         "description": "catalogo de productos y carrito de compras",
-        "descriptionLarga": "Optimización para buscadores",
-        "price": 60000
+        "descriptionLarga": "Un carro de compras random ",
+        "price": 70000
     }
 ]

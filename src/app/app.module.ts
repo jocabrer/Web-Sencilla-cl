@@ -18,6 +18,7 @@ import { MatCardModule } from '@angular/material/card';
 import { FormatoNumerosPipe } from './pipes/formato-numeros.pipe';
 import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
     declarations: [
@@ -27,6 +28,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         FormatoNumerosPipe,
     ],
     imports: [
+        AppRoutingModule,
         FormsModule,
         BrowserModule,
         BrowserAnimationsModule,
@@ -40,13 +42,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         MatDividerModule,
         MatCardModule,
         MatTooltipModule,
-        MatTableModule,
-        RouterModule.forRoot([
-            { path: 'creatuweb', component: ArmaWebComponent },
-            { path: 'contacto', component: ContactoSolicitudComponent },
-            { path: '', redirectTo: '/creatuweb', pathMatch: 'full' },
-            { path: '**', component: ComponenteNoEncontradoComponent },
-        ]),
+        MatTableModule
     ],
     providers: [],
     bootstrap: [AppComponent],
